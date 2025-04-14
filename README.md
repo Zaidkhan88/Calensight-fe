@@ -8,7 +8,6 @@ You are the only admin of your events, being able to:
   - Title, notes (optional), start date, end date
 - [x] Update events
 - [x] Delete events
-- [ ] View other people events (now only private events from march 2023)
 
 Check the backend code and tech stack at [Calendar Back github repository](https://github.com/Zaidkhan88/Calensight-be))
 
