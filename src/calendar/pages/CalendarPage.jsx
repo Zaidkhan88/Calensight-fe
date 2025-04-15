@@ -13,16 +13,16 @@ import { updateEvent } from '../../store';
 import { useDispatch } from 'react-redux';
 
 export const CalendarPage = () => {
-  const { user } = useAuthStore();
+  // const { user } = useAuthStore();
   const { events, setActiveEvent, startLoadingEvents, isLoadingEvents } = useCalendarStore();
   const { openDateModal } = useUIStore();
   const [lastview, setLastview] = useState(localStorage.getItem('lastview') || 'month');
 
   const eventStyleGetter = (event, start, end, isSelected) => {
-    const isMyEvent = user.uid === event.user._id || user.uid === event.user.uid;
+    // const isMyEvent = user.uid === event.user._id || user.uid === event.user.uid;
 
     const style = {
-      backgroundColor: isMyEvent ? '#347CF7' : '#465660',
+      backgroundColor:'#347CF7',
       borderRadius: '0px',
       opacity: 0.8,
       color: 'white',
@@ -61,7 +61,7 @@ export const CalendarPage = () => {
     dispatch(updateEvent(updatedEvent));
   
     // 🛰️ Optional: Dispatch to update backend
-    dispatch(startUpdatingEvent(updatedEvent));
+    // dispatch(startUpdatingEvent(updatedEvent));
   };
   return (
     <>

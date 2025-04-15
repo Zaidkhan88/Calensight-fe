@@ -8,7 +8,7 @@ export const useCalendarStore = () => {
   const dispatch = useDispatch();
 
   const { events, activeEvent, isLoadingEvents } = useSelector((state) => state.calendar);
-  const { user } = useSelector((state) => state.auth);
+  // const { user } = useSelector((state) => state.auth);
 
   const setActiveEvent = (calendarEvent) => {
     dispatch(activateEvent(calendarEvent));
@@ -16,6 +16,7 @@ export const useCalendarStore = () => {
 
   const startSavingEvent = async (calendarEvent) => {
     try {
+      console.log('bvbj',calendarEvent  )
       if (calendarEvent.id) {
         // Updating event
         await calendarApi.put(`/events/${calendarEvent.id}`, calendarEvent);
@@ -25,7 +26,7 @@ export const useCalendarStore = () => {
         // Creating event
         const { data } = await calendarApi.post('/events/', calendarEvent);
 
-        dispatch(addNewEvent({ ...calendarEvent, id: data.event.id, user: user }));
+        dispatch(addNewEvent({ ...calendarEvent, id: data.event.id }));
       }
       //
     } catch (error) {
