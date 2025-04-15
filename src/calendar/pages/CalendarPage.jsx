@@ -6,7 +6,7 @@ import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop';
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
 
 import { FabAddNew, Navbar, CalendarEvent, CalendarModal, FabDelete } from '../';
-import { Loader } from '../../auth/pages/Loader';
+// import { Loader } from '../../auth/pages/Loader';
 import { localizer } from '../../helpers';
 import { useAuthStore, useCalendarStore, useUIStore } from '../../hooks';
 import { updateEvent } from '../../store';
@@ -45,9 +45,7 @@ export const CalendarPage = () => {
     setLastview(event);
   };
 
-  useEffect(() => {
-    startLoadingEvents();
-  }, []);
+  
   const DnDCalendar = withDragAndDrop(BigCalendar);
 
   const dispatch = useDispatch();
@@ -91,7 +89,7 @@ export const CalendarPage = () => {
 
       <FabDelete />
 
-      {isLoadingEvents && <Loader />}
+      {/* {isLoadingEvents && <Loader />} */}
     </>
   );
 };
